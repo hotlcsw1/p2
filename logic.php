@@ -5,7 +5,7 @@
 */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty(trim($_POST["numberOfWords"])) or !(intval(trim($_POST["numberOfWords"]))>=0 and intval(trim($_POST["numberOfWords"]))<=9) or strval(trim($_POST["numberOfWords"]))=="-0") {
-      $message = "You must enter a value for # of Words between 1-9";
+      $message = "You must enter a numeric value for # of Words between 1-9";
       echo "<script type='text/javascript'>alert('$message');</script>";
       echo ("<SCRIPT LANGUAGE='JavaScript'>
         window.location.href='http://localhost/p2/index.php';
@@ -123,12 +123,10 @@ if (substr($passwordString,-1)=="-") {
 /*
     Retrieve the value of the label displayPwd
 */
-session_start(); //found a better way to do it using h2
+session_start(); //  found a better way to do it using h2
 //  $value1=$_SESSION['displayPwd'];
-//  echo "display pwd is $value1";
 
 if (!$passwordString=="") {
-  //  echo "final password string is $passwordString<br />\n";
   $displayPwd = $passwordString;
 }
 
