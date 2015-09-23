@@ -1,4 +1,7 @@
 /* Default Style Sheet */
+body {
+	text-align: center;
+}
 
 p {
 	color: #003366;
@@ -13,9 +16,12 @@ h1 {
 }
 
 h2 {
-	color: 000000;
-  margin: 1;
-	line-height: 20px;
+	color: #FF7F50;
+	text-align: center;
+  margin: 0px;
+	background-color: #D3D3D3;
+  padding: 18px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -23,14 +29,20 @@ h3 {
   margin: 0;
 }
 
-img.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+div {
+		background:white;
+		overflow:hidden;
+	}
+
+span {
+		background:white;
+		display:inline-block;
+		float:inherit;
+		margin:0px 0px 0 0;
+		padding:0px 0px;
 }
 
-P.blocktext {
-    margin-left: auto;
-    margin-right: auto;
-    width: 20em;
+img.center {
+	margin-left: auto;
+	margin-right: auto;
 }
