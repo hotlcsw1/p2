@@ -19,12 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $noOfWordsFromPost = 4;
 }
 
-/*  Create an array with 30 words that I can use
-    to generate the xkcd password
-*/
-
-/*  Words array for xkcd password
-    there are 30 words in the array below
+/*  Word array for xkcd password
+    has 30 words in the array below
     Array Index then is 0 to 29
 */
 $listOfWords = Array('bit','crumb','dab','dash','fleck','glimmer','hint','iota','jot','lick','modicum','morsel','nugget','pinch','scrap','scruple','shadow','shred','sliver','smatter','smidgen','snippet','horse','dog','cat','donkey','rat','mouse','zibra','kangaroo');
@@ -32,7 +28,6 @@ $listOfWords = Array('bit','crumb','dab','dash','fleck','glimmer','hint','iota',
 /*  Retrieve the # of words entered
     by the user in the index.php page
 */
-//$noOfWordsFromPost = $_POST['numberOfWords'];
 
 /*  Generate a random array list of words from the array library
     up to the number of words entered by the user
@@ -40,10 +35,10 @@ $listOfWords = Array('bit','crumb','dab','dash','fleck','glimmer','hint','iota',
 */
 $rand_keys = array_rand($listOfWords, $noOfWordsFromPost);
 
-// Array to store the digits 0-9
+//  Array to store the digits 0-9
 $listOfNumbers = Array('0','1','2','3','4','5','6','7','8','9');
 
-//  Generate a random number
+//  Generate a random number using the $listOfNumbers array and array_rand function
 $rand_keys1 = array_rand($listOfNumbers, 1);
 $randomNumber=$listOfNumbers[$rand_keys1];
 
@@ -114,17 +109,11 @@ if(isset($_POST['addSymbol'])) {
 
 /* Remove '-' from the passwordString if it is the last value
    In the case of more than 1 word, and when number and symbol checkboxes
-   Are not selected, there is a '-' that needs to be removed
+   Are not selected, there is a '-'.  This needs to be removed
 */
 if (substr($passwordString,-1)=="-") {
   $passwordString=substr($passwordString,0,-1);
 }
-
-/*
-    Retrieve the value of the label displayPwd
-*/
-session_start(); //  found a better way to do it using h2
-//  $value1=$_SESSION['displayPwd'];
 
 if (!$passwordString=="") {
   $displayPwd = $passwordString;
