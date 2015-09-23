@@ -1,0 +1,36 @@
+/* Default Style Sheet */
+
+p {
+	color: #003366;
+	line-height: 25px;
+}
+
+h1 {
+	color: 000000;
+	text-align: center;
+  margin: 0;
+	margin-bottom: 25px;
+}
+
+h2 {
+	color: 000000;
+  margin: 1;
+	line-height: 20px;
+}
+
+h3 {
+	color: 696969;
+  margin: 0;
+}
+
+img.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+P.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+}
