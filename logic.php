@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $message = "You must enter a numeric value for # of Words between 1-9";
       echo "<script type='text/javascript'>alert('$message');</script>";
       echo ("<SCRIPT LANGUAGE='JavaScript'>
-        window.location.href='http://localhost/p2/index.php';
+        window.location.href='http://p2.approjects.me/index.php';
       </SCRIPT>");
     } elseif (!empty(trim($_POST["numberOfWords"])) and is_int(trim($_POST["numberOfWords"]))) {
       $noOfWordsFromPost = $_POST['numberOfWords'];
