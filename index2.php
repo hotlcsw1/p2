@@ -6,6 +6,7 @@
   <meta charset = "utf-8">
   <meta name = "author" content = "Arcot Prakash">
   <meta name = "description" content ="xkcd Style Password">
+  <?php require 'logic.php'; ?>
 </head>
 
 <body>
@@ -15,11 +16,11 @@
   xkcd Style Password Generator
 </h1>
 
-<form method="post" action="index.php">
+<form method="post" action="index2.php">
     <P class="blocktext">
   # of Words <input type="text" name = "numberOfWords"> (Max 9)<br>
   <input type="checkbox" name="addNumber" value=""> Add a number<br>
-  <input type="checkbox" name="addSymbol"> Add a symbol<br>
+  <input type="checkbox" name="addSymbol" value=""> Add a symbol<br>
   <br>
   <button type="submit">Gimme Another</button>
   <br>
