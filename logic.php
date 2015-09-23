@@ -24,6 +24,8 @@ $listOfWords = Array('bit','crumb','dab','dash','fleck','glimmer','hint','iota',
 // Retrieve the # of words entered by the user in the index.php page
 $noOfWordsFromPost = $_POST['numberOfWords'];
 
+// Convert $noOfWordsFromPost to be long - got a warning msg_send
+
 // Generate a random array list of words from the array library
 // Up to the number of words entered by the user
 // Parameters are the listOfWords and noOfWordsFromPost
@@ -67,7 +69,7 @@ if ($noOfWordsFromPost==1) {
     $t=$rand_keys[$a];
     // echo "value: $listOfWords[$t]<br />\n";
       $passwordString.=$listOfWords[$t]."-";
-    //echo "password string is $passwordString";
+    echo "password string is $passwordString<br />\n";
   }
 }
 
@@ -86,15 +88,15 @@ echo "<br />\n";
 // if(isset($_POST['addNumber']) && $_POST['addNumber']!="")
 if(isset($_POST['addNumber']))
 {
-    echo 'checkbox is checked';
+    echo "number checkbox is checked<br />\n";
     // Add the randomly chosen number to password at the end of the string
     if ($noOfWordsFromPost==1) {
       $passwordString.=strval($randomNumber);
     } else {
         $passwordString=substr($passwordString,0,-1).strval($randomNumber);
-  }
+    }
 } else {
-    echo 'checkbox is not checked';
+    echo "number checkbox is not checked<br />\n";
     // do nothing to the $passwordString value
 }
 echo "password string after number is $passwordString<br />\n";
@@ -105,18 +107,26 @@ if(!isset($_POST['addNumber'])) {
 // Check to see if the user wanted a random symbol added
 if(isset($_POST['addSymbol']))
 {
-    echo 'symbol checkbox is checked';
-    // Add the randomly chosen symbol to password at the end of the string
+    echo "symbol checkbox is checked<br />\n";
+    // Add the randomly chosen symbol to password
+    // at the end of the string
     if ($noOfWordsFromPost==1) {
       $passwordString.=strval($randomSpl);
     } else {
+      if (!isset($_POST['addNumber'])) {
+        echo "notset2<br />\n";
+        $passwordString=substr($passwordString,0,-1).strval($randomSpl);
+        echo "password string after notset2 is $passwordString<br />\n";
+      } else {
+        echo "is set 2<br />\n";
         $passwordString=$passwordString.strval($randomSpl);
-        echo "password string after 1 is $passwordString<br />\n";
-  }
+        echo "password string after is set 2 is $passwordString<br />\n";
+      }
+      }
 } else {
-    echo 'checkbox is not checked';
+    echo "checkbox is not checked<br />\n";
     // do nothing to the $passwordString value
-}
+  }
 echo "password string after ch is $passwordString<br />\n";
 
 // Remove - from the $passwordString if it is the last value
